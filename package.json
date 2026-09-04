@@ -19,7 +19,7 @@
     "moment": "^2.22.2",
     "mongodb": "^3.1.10",
     "node-fetch": "^2.2.0",
-    "node-opus": "^0.2.9",
+    "opusscript": "^0.0.8",
     "performance-now": "^2.1.0",
     "proxy-deep": "^2.1.0",
     "random-puppy": "^1.1.0",

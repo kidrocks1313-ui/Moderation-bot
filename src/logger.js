@@ -1,12 +1,11 @@
 require('./yaml')
 const fs = require('fs')
-const config = require(__dirname + '/config.js')
+const config = require(__dirname + '/../config.js')
 const chalk = require('chalk')
 const share = require(__dirname + '/share')
 const moment = require('moment')
 const args = require(__dirname + '/argument_parser')(process.argv.slice(2))
 
-// Default logger settings if they aren't in config.js
 const loggerConfig = Object.assign({
   style: 'original',
   debug: false
@@ -15,6 +14,7 @@ const loggerConfig = Object.assign({
 class Logger {
   initLog() {
     this.initialized = true
+
     fs.writeFileSync(
       'latest.log',
       `--- The log begin at ${new Date().toLocaleString()} ---\n`
@@ -38,9 +38,12 @@ class Logger {
       this.initialized = true
     }
 
-    if (!this.initialized && init) this.initLog()
+    if (!this.initialized && init) {
+      this.initLog()
+    }
 
     const self = new Logger()
+
     self.thread = thread
     self.thread_raw = thread
 
@@ -53,16 +56,36 @@ class Logger {
     }
 
     switch (color) {
-      case 'yellow': self.thread = chalk.bold.yellow(thread); break
-      case 'darkgray': self.thread = chalk.gray(thread); break
-      case 'red': self.thread = chalk.red(thread); break
-      case 'lightred': self.thread = chalk.bold.red(thread); break
-      case 'green': self.thread = chalk.green(thread); break
-      case 'lightpurple': self.thread = chalk.bold.hex('#800080')(thread); break
-      case 'white': self.thread = chalk.white(thread); break
-      case 'cyan': self.thread = chalk.cyan(thread); break
-      case 'purple': self.thread = chalk.hex('#800080')(thread); break
-      case 'blue': self.thread = chalk.blue(thread); break
+      case 'yellow':
+        self.thread = chalk.bold.yellow(thread)
+        break
+      case 'darkgray':
+        self.thread = chalk.gray(thread)
+        break
+      case 'red':
+        self.thread = chalk.red(thread)
+        break
+      case 'lightred':
+        self.thread = chalk.bold.red(thread)
+        break
+      case 'green':
+        self.thread = chalk.green(thread)
+        break
+      case 'lightpurple':
+        self.thread = chalk.bold.hex('#800080')(thread)
+        break
+      case 'white':
+        self.thread = chalk.white(thread)
+        break
+      case 'cyan':
+        self.thread = chalk.cyan(thread)
+        break
+      case 'purple':
+        self.thread = chalk.hex('#800080')(thread)
+        break
+      case 'blue':
+        self.thread = chalk.blue(thread)
+        break
       default: {
         const colors = [
           chalk.bold.yellow(thread),
@@ -83,6 +106,7 @@ class Logger {
     }
 
     this.info(`Registered logger for: ${thread}`, true)
+
     return self
   }
 
@@ -94,6 +118,7 @@ class Logger {
       chalk.reset()
 
     let thread = this.thread
+
     const logger = {}
 
     logger.coloredlevel = chalk`{${color} ${level}}`
@@ -107,6 +132,7 @@ class Logger {
 
     if (this.style === 'maven') {
       level = level.replace('warn', 'warning')
+
       logger.coloredlevel2 =
         chalk`{${color}.bold ${level.toUpperCase()}}`
 
@@ -137,7 +163,9 @@ class Logger {
 
     fs.appendFileSync('latest.log', `${data}\n`)
 
-    if (write_to_console) console.info(data)
+    if (write_to_console) {
+      console.info(data)
+    }
   }
 
   info(message, isLogger = false) {
@@ -149,11 +177,15 @@ class Logger {
     let opt = false
 
     if (loggerConfig.debug || args.debugg) {
-      if (args.debugg === false) return this
+      if (args.debugg === false) {
+        return this
+      }
+
       opt = true
     }
 
     this.out(message, 'debug', 'cyan', isLogger, opt)
+
     return this
   }
 

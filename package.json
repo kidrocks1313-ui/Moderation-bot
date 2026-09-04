@@ -1,51 +1,52 @@
 {
-  "name": "blacklistener",
-  "version": "1.2.1",
-  "description": "Global Banning System for Discord.",
-  "main": "index.js",
-  "dependencies": {
-    "biguint-format": "^1.0.0",
-    "chalk": "^2.4.1",
-    "dblapi.js": "^2.1.0",
-    "discord.js": "^11.4.2",
-    "fast-levenshtein": "^2.0.6",
-    "ffmpeg-binaries": "^4.0.0",
-    "flake-idgen": "^1.1.0",
-    "form-data": "^2.3.2",
-    "hoek": "^5.0.4",
-    "lzma-native": "^4.0.1",
-    "mkdirp-promise": "^5.0.1",
-    "moment": "^2.22.2",
-    "mongodb": "^3.1.10",
-    "node-fetch": "^2.2.0",
-    "node-opus": "^0.3.0",
-    "performance-now": "^2.1.0",
-    "proxy-deep": "^2.1.1",
-    "random-puppy": "^1.1.0",
-    "simple-git": "^1.105.0",
-    "string-format": "^2.0.0",
-    "stringstream": "^1.0.0",
-    "usage": "^0.7.1",
-    "yaml": "^1.0.2",
-    "youtube-node": "^1.3.2",
-    "ytdl-core": "^0.27.1"
-  },
-  "devDependencies": {
-    "eslint": "^5.7.0",
-    "mocha": "^5.2.0"
-  },
-  "scripts": {
-    "test": "mocha && node index.js --travis-build",
-    "lint": "node travis/lint.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rht0910/BlackListener.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rht0910/BlackListener/issues"
-  },
-  "homepage": "https://github.com/rht0910/BlackListener#readme"
+"name": "blacklistener",
+"version": "1.2.1",
+"description": "Global Banning System for Discord.",
+"main": "index.js",
+"dependencies": {
+"biguint-format": "^1.0.0",
+"chalk": "^2.4.1",
+"dblapi.js": "^2.1.0",
+"discord.js": "^11.4.2",
+"fast-levenshtein": "^2.0.6",
+"ffmpeg-binaries": "^4.0.0",
+"flake-idgen": "^1.1.0",
+"form-data": "^2.3.2",
+"hoek": "^5.0.4",
+"lzma-native": "^4.0.1",
+"mkdirp-promise": "^5.0.1",
+"moment": "^2.22.2",
+"mongodb": "^3.1.10",
+"node-fetch": "^2.2.0",
+"node-opus": "^0.2.9",
+"performance-now": "^2.1.0",
+"proxy-deep": "^2.1.1",
+"random-puppy": "^1.1.0",
+"simple-git": "^1.105.0",
+"string-format": "^2.0.0",
+"stringstream": "^1.0.0",
+"usage": "^0.7.1",
+"yaml": "^1.0.2",
+"youtube-node": "^1.3.2",
+"ytdl-core": "^0.27.1"
+},
+"devDependencies": {
+"eslint": "^5.7.0",
+"mocha": "^5.2.0"
+},
+"scripts": {
+"test": "mocha && node index.js --travis-build",
+"lint": "node travis/lint.js"
+},
+"repository": {
+"type": "git",
+"url": "git+https://github.com/rht0910/BlackListener.git"
+},
+"author": "",
+"license": "ISC",
+"bugs": {
+"url": "https://github.com/rht0910/BlackListener/issues"
+},
+"homepage": "https://github.com/rht0910/BlackListener#readme"
 }
+
